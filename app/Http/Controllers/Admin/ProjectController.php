@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\Technology;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreProjectRequest;
@@ -29,7 +31,8 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view('admin.projects.create', compact('types'));
+        $technologies = Technology::all();
+        return view('admin.projects.create', compact('types', 'technologies'));
     }
 
     /**
@@ -62,8 +65,10 @@ class ProjectController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(Project $project)
-    {
-        return view('admin.projects.edit', compact('project'));
+    {   
+        $types = Type::all();
+        $technologies = Technology::all();
+        return view('admin.projects.edit', compact('project', 'types', 'technologies'));
     }
 
     /**
