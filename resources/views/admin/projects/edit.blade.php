@@ -3,7 +3,7 @@
 @section('title', 'Edit project', $project->title) 
 
 @section('content')
-    <section>
+    <section class=" text-white">
         <div class="d-flex justify-content-between align-items-center py-4">
             <h2>Edit project: {{$project->title}}</h2>
             <a href="{{route('admin.projects.show', $project->slug)}}" class="btn btn-danger">Show Project</a>
