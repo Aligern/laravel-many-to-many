@@ -21,14 +21,14 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="text-white fa-solid fa-rectangle-list"></i></a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#" id="userProfile" role="button">
+                <ul class="dropdown-menu ls-glass">
+                  <li><a class="dropdown-item text-white" href="#" id="userProfile" role="button">
                     <span class="mr-2 d-none d-lg-inline text-grat-600 small">Profile</span>
                     <img class="profile-img rounded-circle" src="/img/Numemon.png" alt="Numemon">
                 </a></li>
-                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Settings</a></li>
                   <li>
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" title="Logout">Logout <i class="fa-solid fa-right-from-bracket">  
+                    <a class="dropdown-item text-white" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" title="Logout">Logout <i class="fa-solid fa-right-from-bracket">  
                     </i>
                     </a>
                     <form action="{{ route('logout') }}" method="POST" id="logout-form">

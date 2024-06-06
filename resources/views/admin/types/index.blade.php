@@ -8,7 +8,7 @@
         <h1>Types</h1>
         <a href="{{route('admin.types.create')}}" class="btn btn-primary me-2"><i class="fa-solid fa-plus"></i> Add new type</a>
       </div>
-        <table class="table table-striped">
+        <table class="ls-glass">
           
             <thead>
                 <tr>
