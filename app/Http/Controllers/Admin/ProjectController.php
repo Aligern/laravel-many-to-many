@@ -92,6 +92,9 @@ class ProjectController extends Controller
             $data['image'] = $path;
         }
         $project->update($data);
+        if ($request->has('technologies')) {
+            $project->technologies()->sync($request->technologies);
+        }
         return redirect()->route('admin.projects.show', $project->slug);
     }
 
@@ -102,6 +105,8 @@ class ProjectController extends Controller
     {
         if ($project->image) {
             Storage::delete($project->image);
+        } else {
+            $project->technologies()->sync([]);
         }
         $project->delete();
         return redirect()->route('admin.projects.index')->with('message', $project->title . ' deleted!');
