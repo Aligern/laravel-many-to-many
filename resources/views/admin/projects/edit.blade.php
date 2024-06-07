@@ -63,7 +63,7 @@
                     @enderror
                 </div>
     
-                <div class="mb-3">
+                <div class="pb-3">
                     <button type="submit" class="btn btn-danger">Update</button>
                     <button type="reset" class="btn btn-secondary">Reset</button>
                 </div>

@@ -34,7 +34,7 @@
             @endif
         </div>
     
-        <div class="mt-3">
+        <div class="mt-3 mb-4">
             <a href="{{route('admin.projects.edit', $project->slug)}}" class="btn btn-secondary">Edit</a>
                 <form action="{{route('admin.projects.destroy', $project->slug)}}" method="POST" class="d-inline-block">
                     @csrf
