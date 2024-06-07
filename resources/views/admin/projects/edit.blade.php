@@ -3,12 +3,19 @@
 @section('title', 'Edit project', $project->title) 
 
 @section('content')
-    <section class=" text-white">
-        <div class="container ls-glass mt-2">
+    <section class="text-white">
+
+        <div class="container">
             <div class="d-flex justify-content-between align-items-center py-4">
+                <div class="">
+                    <a href="{{ route('admin.projects.index') }}" class="btn ls-glass-badge px-4" ><i class="fa-solid fa-arrow-left text-white"></i></a>
+                </div>
                 <h2>Edit project: {{$project->title}}</h2>
                 <a href="{{route('admin.projects.show', $project->slug)}}" class="btn btn-danger">Show Project</a>
             </div>
+        </div>
+           
+            <div class="container ls-glass mt-2">
     
             <form action="{{route('admin.projects.update', $project->slug)}}" method="POST" enctype="multipart/form-data">
                 @csrf

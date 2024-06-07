@@ -5,6 +5,9 @@
 @section('content')
 
 <section class="text-white">
+    <div class="container mt-3">
+        <a href="{{ route('admin.projects.index') }}" class="btn ls-glass-badge"><i class="fa-solid fa-arrow-left text-white"></i></a>
+    </div>
     <div class="container ls-glass mt-2">
         <h2>Create a new project</h2>
 

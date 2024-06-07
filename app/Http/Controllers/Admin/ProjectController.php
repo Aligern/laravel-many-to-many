@@ -21,7 +21,7 @@ class ProjectController extends Controller
     {
         //$projects = Project::all();
         // dd($project);
-        $projects = Project::paginate(10);
+        $projects = Project::where('title', 'like', '%' . request('search') . '%')->paginate(10);
         return view('admin.projects.index', compact('projects'));
         //
     }

@@ -13,7 +13,7 @@
           <a class="nav-link"  {{Route::currentRouteName() === 'admin.types.index' ? 'active' : ''}} href="{{route('admin.types.index')}}"><i class="fa-solid fa-layer-group pe-2"></i>Types</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  {{Route::currentRouteName() === 'admin.technologies.index' ? 'active' : ''}} href="{{route('admin.technologies.index')}}"><i class="fa-solid fa-layer-group pe-2"></i>technologies</a>
+          <a class="nav-link"  {{Route::currentRouteName() === 'admin.technologies.index' ? 'active' : ''}} href="{{route('admin.technologies.index')}}"><i class="fa-solid fa-microchip pe-2"></i></i>technologies</a>
         </li>
       </ul>
 </nav>
