@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Edit technology', $technology->title) 
+@section('title', 'Edit technology', $technology->name) 
 
 @section('content')
     <section class="text-white">
@@ -10,7 +10,7 @@
                 <div >
                     <a href="{{ route('admin.technologies.index') }}" class="btn ls-glass-badge px-4" ><i class="fa-solid fa-arrow-left text-white"></i></a>
                 </div>
-                <h2>Edit technology: {{$technology->title}}</h2>
+                <h2>Edit technology: {{$technology->name}}</h2>
                 <a href="{{route('admin.technologies.show', $technology->slug)}}" class="btn btn-danger">Show technology</a>
             </div>
         </div>
@@ -22,20 +22,20 @@
                 @method('PUT')
     
                 <div class="mb-3">
-                    <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{old('title', $technology->title)}}" minlength="3" maxlength="200" required>
-                    @error('title')
+                    <label for="name" class="form-label">name</label>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{old('name', $technology->name)}}" minlength="3" maxlength="200" required>
+                    @error('name')
                         <div class="alert alert-danger">{{ $message }}</div> 
                     @enderror
-                    <div id="titleHelp" class="form-text">Enter the title of the technology</div>
+                    <div id="nameHelp" class="form-text">Enter the name of the technology</div>
                 </div>
     
                 <div class="d-flex">
                     <div class="media me-4">
                         @if($technology->image)
-                            <img src="{{asset('storage/'. $technology->image)}}" class="shadow" width="150" alt="{{$technology->title}}" id="uploadPreview">
+                            <img src="{{asset('storage/'. $technology->image)}}" class="shadow" width="150" alt="{{$technology->name}}" id="uploadPreview">
                         @else
-                            <img class="shadow" width="150" src="/img/placeholder.png" alt="{{$technology->title}}" id="uploadPreview">
+                            <img class="shadow" width="150" src="/img/placeholder.png" alt="{{$technology->name}}" id="uploadPreview">
                         @endif
                     </div>
                 </div>

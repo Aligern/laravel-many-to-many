@@ -63,7 +63,7 @@
 
                         <div class="mb-4 row">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn ls-glass-badge">
                                     {{ __('Register') }}
                                 </button>
                             </div>

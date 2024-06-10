@@ -18,7 +18,7 @@
           <thead>
               <tr class="fs-4 my-4">
                 <th scope="col">Id</th>
-                <th scope="col">Title</th>
+                <th scope="col">name</th>
                 <th scope="col">Slug</th>
                 <th scope="col">Action</th>
               </tr>
@@ -27,7 +27,7 @@
               @foreach ($technologies as $technology)
               <tr>
                 <td>{{$technology->id}}</td>
-                <td>{{$technology->title}}</td>
+                <td>{{$technology->name}}</td>
                 <td>{{$technology->slug}}</td>
                 <td>
                   <a class="m-1 btn text-white" href="{{route('admin.technologies.show', $technology->slug)}}">

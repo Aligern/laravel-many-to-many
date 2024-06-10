@@ -1,26 +1,26 @@
 @extends('layouts.admin')
 
-@section('title', 'Add new project')
+@section('title', 'Add new type')
 
 @section('content')
 
 <section class="text-white">
     <div class="container mt-3">
-        <a href="{{ route('admin.projects.index') }}" class="btn ls-glass-badge"><i class="fa-solid fa-arrow-left text-white"></i></a>
+        <a href="{{ route('admin.types.index') }}" class="btn ls-glass-badge"><i class="fa-solid fa-arrow-left text-white"></i></a>
     </div>
     <div class="container ls-glass mt-2">
-        <h2>Create a new project</h2>
+        <h2>Create a new type</h2>
 
-    <form action="{{route('admin.projects.store')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('admin.types.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="mb-3">
-            <label for="title" class="form-label">Project Title</label>
-            <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{old('title')}}" minlength="3" maxlength="200" required>
-            @error('title')
+            <label for="name" class="form-label">type name</label>
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{old('name')}}" minlength="3" maxlength="200" required>
+            @error('name')
                 <div class="alert alert-danger">{{ $message }}</div> 
             @enderror
-            <div id="titleHelp" class="form-text">Enter the title of the project</div>
+            <div id="nameHelp" class="form-text">Enter the name of the type</div>
         </div>
 
         <div class="mb-3">
@@ -50,18 +50,6 @@
                   @endforeach
                 </select>
                 @error('type_id')
-                <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-              </div>
-              <div class="form-group mb-3">
-                <p>Select a technology</p>
-                @foreach ($technologies as $technology)
-                    <div>
-                        <input type="checkbox" name="technologies[]" value="{{$technology->id}}" class="form-check-input" {{in_array($technology->id, old('technologies', [])) ? 'checked' : ''}}">
-                        <label for="" class="form-check-label">{{$technology->name}}</label>
-                    </div>
-                @endforeach
-                @error('technologies')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
               </div>
