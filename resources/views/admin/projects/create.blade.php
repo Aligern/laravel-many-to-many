@@ -66,7 +66,7 @@
                 @enderror
               </div>
 
-            <div class="mb-3">
+            <div class="mb-3 pb-3">
                 <button type="submit" class="btn btn-danger">Create</button>
                 <button type="reset" class="btn btn-secondary">Reset</button>
             </div>

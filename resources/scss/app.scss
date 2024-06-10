@@ -15,6 +15,12 @@ h1 {
 body {
     background-image: url('/public/img/desktop-abstract-minimal-5k-5u-1920x1080.jpg');
 }
+i {
+    color: white;
+}
+.icon-delete {
+    color: red;
+}
 #admin {
     height: 100vh;
     overflow: hidden;
@@ -65,3 +71,23 @@ body {
     border-radius: 15px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
+
+table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: white;
+    background-color: transparent;
+    border-collapse: collapse;
+    table th,
+table td {
+  vertical-align: top;
+  border-bottom: 1px solid #dee2e6;
+}
+
+table thead th {
+    vertical-align: bottom;
+    border-bottom-width: 2px;
+    color: #6c757d;
+    font-weight: bold;
+  }
+  }

@@ -3,14 +3,14 @@
 @section('title', 'types')
 
 @section('content')
-    <section class="text-white">
+    <section>
       <div class="container d-flex justify-content-between align-items-center py-3">
         <div >
-          <a href="{{ route('admin.dashboard') }}" class="btn ls-glass-badge px-4" ><i class="fa-solid fa-arrow-left text-white"></i></a>
+          <a href="{{ route('admin.dashboard') }}" class="btn ls-glass-badge px-4" ><i class="fa-solid fa-arrow-left"></i></a>
         </div>
         <h1>types</h1>
         <div>
-          <a href="{{route('admin.types.create')}}" class="btn ls-glass-badge me-2 text-white"><i class="fa-solid fa-plus text-white"></i> Add new type</a>
+          <a href="{{route('admin.types.create')}}" class="btn ls-glass-badge me-2 text-white"><i class="fa-solid fa-plus"></i> Add new type</a>
         </div>
       </div>
       <div class="container ls-glass p-4">
@@ -30,17 +30,17 @@
                 <td>{{$type->name}}</td>
                 <td>{{$type->slug}}</td>
                 <td>
-                  <a class="m-1 btn text-white" href="{{route('admin.types.show', $type->slug)}}">
+                  <a class="m-1 btn" href="{{route('admin.types.show', $type->slug)}}">
                     <i class="fa-regular fa-eye"></i>
                   </a>
-                  <a  class="m-1 btn text-white" href="{{route('admin.types.edit', $type->slug)}}">
+                  <a  class="m-1 btn" href="{{route('admin.types.edit', $type->slug)}}">
                     <i class="fa-solid fa-file-pen"></i> 
                   </a>
                   <form action="{{route('admin.types.destroy', $type->slug)}}" method="POST" class="d-inline-block">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class=" btn m-1 text-danger delete-button" href="{{route('admin.types.destroy', $type->slug)}}">
-                      <i class="fa-solid fa-trash-can"></i>
+                      <i class="fa-solid fa-trash-can icon-delete"></i>
                     </button>
                   </form>
                 </td>

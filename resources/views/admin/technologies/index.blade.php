@@ -3,20 +3,20 @@
 @section('title', 'technologies')
 
 @section('content')
-    <section class="text-white">
+    <section>
       <div class="container d-flex justify-content-between align-items-center py-3">
         <div >
-          <a href="{{ route('admin.dashboard') }}" class="btn ls-glass-badge px-4" ><i class="fa-solid fa-arrow-left text-white"></i></a>
+          <a href="{{ route('admin.dashboard') }}" class="btn ls-glass-badge px-4" ><i class="fa-solid fa-arrow-left"></i></a>
         </div>
         <h1>technologies</h1>
         <div>
-          <a href="{{route('admin.technologies.create')}}" class="btn ls-glass-badge me-2 text-white"><i class="fa-solid fa-plus text-white"></i> Add new technology</a>
+          <a href="{{route('admin.technologies.create')}}" class="btn ls-glass-badge me-2 text-white"><i class="fa-solid fa-plus"></i> Add new technology</a>
         </div>
       </div>
-      <div class="container ls-glass p-4">
+      <div class="container ls-glass p-3">
         <table>
           <thead>
-              <tr class="fs-4 my-4">
+              <tr class="fs-4">
                 <th scope="col">Id</th>
                 <th scope="col">name</th>
                 <th scope="col">Slug</th>
@@ -30,7 +30,7 @@
                 <td>{{$technology->name}}</td>
                 <td>{{$technology->slug}}</td>
                 <td>
-                  <a class="m-1 btn text-white" href="{{route('admin.technologies.show', $technology->slug)}}">
+                  <a class="m-1 btn " href="{{route('admin.technologies.show', $technology->slug)}}">
                     <i class="fa-regular fa-eye"></i>
                   </a>
                   <a class="m-1 btn text-white" href="{{route('admin.technologies.edit', $technology->slug)}}">
@@ -40,7 +40,7 @@
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="m-1 btn text-danger delete-button" href="{{route('admin.technologies.destroy', $technology->slug)}}">
-                      <i class="fa-solid fa-trash-can"></i>
+                      <i class="fa-solid fa-trash-can icon-delete"></i>
                     </button>
                   </form>
                 </td>

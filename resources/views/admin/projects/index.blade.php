@@ -3,17 +3,17 @@
 @section('title', 'Projects')
 
 @section('content')
-    <section class="text-white">
+    <section>
       <div class="container d-flex justify-content-between align-items-center py-3">
         <div >
-          <a href="{{ route('admin.dashboard') }}" class="btn ls-glass-badge px-4" ><i class="fa-solid fa-arrow-left text-white"></i></a>
+          <a href="{{ route('admin.dashboard') }}" class="btn ls-glass-badge px-4" ><i class="fa-solid fa-arrow-left"></i></a>
         </div>
         <h1>Projects</h1>
         <div>
-          <a href="{{route('admin.projects.create')}}" class="btn ls-glass-badge me-2 text-white"><i class="fa-solid fa-plus text-white"></i> Add new project</a>
+          <a href="{{route('admin.projects.create')}}" class="btn ls-glass-badge me-2 text-white"><i class="fa-solid fa-plus"></i> Add new project</a>
         </div>
       </div>
-      <div class="container ls-glass p-4">
+      <div class="container ls-glass p-3">
         <table>
             <thead>
                 <tr class="fs-4 my-4">
@@ -34,17 +34,17 @@
                   <td>{{$project->created_at}}</td>
                   <td>{{$project->updated_at}}</td>
                   <td class="d-flex">
-                    <a class="m-1 btn text-white" href="{{route('admin.projects.show', $project->slug)}}">
+                    <a class="m-1 btn" href="{{route('admin.projects.show', $project->slug)}}">
                       <i class="fa-regular fa-eye"></i>
                     </a>
-                    <a class="m-1 btn text-white" href="{{route('admin.projects.edit', $project->slug)}}">
+                    <a class="m-1 btn" href="{{route('admin.projects.edit', $project->slug)}}">
                       <i class="fa-solid fa-file-pen"></i> 
                     </a>
                     <form action="{{route('admin.projects.destroy', $project->slug)}}" method="POST" class="d-inline-block">
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn m-1 text-danger" href="{{route('admin.projects.destroy', $project->slug)}}">
-                        <i class="fa-solid fa-trash-can"></i>
+                        <i class="fa-solid fa-trash-can icon-delete"></i>
                       </button>
                     </form>
                   </td>
